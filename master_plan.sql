@@ -7,8 +7,11 @@ create table import.master_plan(
   team text,
   spass_type text, 
   target text, 
-  request_name text, 
+  request_name text,
+  library_definition text,
+  title text,
+  description text
 );
-COPY import.master_plan
-FROM '/Users/robjones/code/learn/a-curious-moon' with DELIMITER ',' HEADER CSV;
+\copy import.master_plan
+FROM '/Users/robjones/code/learn/a-curious-moon/curious_data/data/master_plan.csv' with DELIMITER ',' HEADER CSV;
 
