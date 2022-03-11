@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    working_dir: /a-curious-moon
+    volumes: /tmp/curious-data/data/
+    environment:
+      host: 127.0.0.1
+      port: 5432
+      sslmode: disable
+      PG_USER: PG_USER
+      PG_PASSWORD: PG_PASSWORD
+      PG_DB: PG_DB
+    env_file:
+      - .env
+      
+
