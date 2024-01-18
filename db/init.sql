@@ -1,17 +1,19 @@
-create schema if not exists import;
-drop table if exists import.master_plan;
-create table import.master_plan(
-  start_time_utc text,
-  duration text,
-  date text,
-  team text,
-  spass_type text, 
-  target text, 
-  request_name text,
-  library_definition text,
-  title text,
-  description text
+CREATE schema if not exists import;
+DROP table if exists import.master_plan;
+CREATE table import.master_plan
+(
+    id                 serial primary key,
+    start_time_utc     text,
+    duration           text,
+    date               text,
+    team               text,
+    spass_type         text,
+    target             text,
+    request_name       text,
+    library_definition text,
+    title              text,
+    description        text
 );
-\copy import.master_plan
-FROM '/Users/robjones/code/learn/a-curious-moon/curious_data/data/master_plan.csv' with DELIMITER ',' HEADER CSV;
-
+COPY import.master_plan
+    FROM '/curious-data/data/master_plan.csv'
+    with DELIMITER ',' HEADER CSV;
