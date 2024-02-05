@@ -5,3 +5,15 @@ As part of my day-to-day role, I'm often involved in incidents. During those inc
 
 ## Approach
 Whilst the text encourages one to use a local postgres, I choose to use a docker container. As such, I expect to improve the automation of running the container and populating it with the data.
+
+## Running
+
+Using this helps ensure the container picks up changes
+```
+docker-compose up --force-restart
+```
+
+Will ensure that it's not running an old version after you've made changes
+```
+docker-compose down
+```
